@@ -4,9 +4,11 @@ import Texts from './texts'
 
 const Featured = ()=>{
     return(
-        <div style={{position: 'relative'}}>
-            <Carrousel/>
+        <div className='featured_wrapper'>
             
+            
+            <Texts/>
+          
             
         </div>
     )

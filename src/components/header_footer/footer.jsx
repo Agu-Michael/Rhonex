@@ -1,12 +1,12 @@
 import React from 'react';
-import { RhonexLogo } from '../ui/icons';
+import {  RhonexLogoTwo } from '../ui/icons';
 const Footer = () =>{
     return(
         <footer className='bck_blue'>
             <div className='footer_logo'>
-                <RhonexLogo
-                    width = '70px'
-                    height = '70px'
+                <RhonexLogoTwo
+                    width = '135px'
+                    height = '120px'
                     link = 'true'
                     linkTo= '/'
                 />

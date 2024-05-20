@@ -2,43 +2,14 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { easePolyOut } from 'd3-ease';
-import Animate from 'react-move/Animate';
-import FeaturedPlayer from '../../../Resources/images/objectThree.png';
 import slide_one from '../../../Resources/images/slideOne.jpg';
 import slide_two from '../../../Resources/images/slideTwo.jpg';
 import slide_three from '../../../Resources/images/slideThree.jpg';
+import slide_four from '../../../Resources/images/slideFour.jpg';
+import slide_five from '../../../Resources/images/slideFive.jpg';
+import slide_six from '../../../Resources/images/slideSix.jpg';
 
-const TextAnimation = ({ text, x, y, delay }) => (
-    <Animate
-        show={true}
-        start={{
-            opacity: 0,
-            x: 503,
-            y: 450,
-        }}
-        enter={{
-            opacity: [1],
-            x: [x],
-            y: [y],
-            timing: { duration: 500, delay: delay, ease: easePolyOut },
-        }}
-    >
-        {({ opacity, x, y }) => (
-            <div
-                className={`featured_text ${text.toLowerCase()}`}
-                style={{
-                    opacity,
-                    transform: `translate(${x}px, ${y}px)`,
-                }}
-            >
-                {text}
-            </div>
-        )}
-    </Animate>
-);
-
-const Carousel = () => {
+const Carrousel = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -53,6 +24,7 @@ const Carousel = () => {
         height: 'auto',
         maxHeight: '100%',
         display: 'block',
+        margin: '0 auto',
     };
 
     return (
@@ -60,25 +32,25 @@ const Carousel = () => {
             <Slider {...settings}>
                 <div>
                     <img src={slide_one} alt="Slide 1" style={imageStyle} />
-                    <TextAnimation text="League" x={273} y={450} delay={0} />
-                    <TextAnimation text="Championships" x={273} y={586} delay={300} />
-                    {/* Add other text animations as needed for the first slide */}
-                    {/* ... */}
                 </div>
                 <div>
                     <img src={slide_two} alt="Slide 2" style={imageStyle} />
-                    {/* Text animations for the second slide */}
-                    {/* ... */}
                 </div>
                 <div>
                     <img src={slide_three} alt="Slide 3" style={imageStyle} />
-                    {/* Text animations for the third slide */}
-                    {/* ... */}
                 </div>
-                {/* Add more slides with their respective text animations */}
+                <div>
+                    <img src={slide_four} alt="Slide 4" style={imageStyle} />
+                </div>
+                <div>
+                    <img src={slide_five} alt="Slide 5" style={imageStyle} />
+                </div>
+                <div>
+                    <img src={slide_six} alt="Slide 6" style={imageStyle} />
+                </div>
             </Slider>
         </div>
     );
 };
 
-export default Carousel;
+export default Carrousel;

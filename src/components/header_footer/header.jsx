@@ -46,7 +46,7 @@ class Header extends Component {
           backgroundColor: "#ffffff",
           boxShadow: "none",
           padding: " 0",
-          borderBottom: " 2px solid #00285e",
+          borderBottom: " 4px solid #03989e",
         }}
       >
         {/* Top toolbar with search bar and social media icons */}

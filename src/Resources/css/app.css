@@ -14,7 +14,7 @@ a {
 }
 
 .bck_blue {
-    background: #0d1831;
+    background: #03989e;
 }
 
 .bck_lblue {
@@ -206,6 +206,7 @@ footer .footer_discl {
     margin-top: 90px;
     height: 800px;
     overflow: hidden;
+    display: flex;
 }
 
 .featured_stripes {
@@ -223,7 +224,7 @@ footer .footer_discl {
     position: absolute;
 }
 
-.featured_number {
+.gable {
     font-size: 270px;
     color: #ffffff;
     transform: translate(260px,170px);
@@ -241,7 +242,7 @@ footer .footer_discl {
     position: absolute;
     background: #03989e;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 72px;
     text-transform: uppercase;
     padding: 0px 20px;
 }
@@ -250,7 +251,7 @@ footer .footer_discl {
     position: absolute;
     background: #03989e;
     color: #ffffff;
-    font-size: 92px;
+    font-size: 72px;
     text-transform: uppercase;
     padding: 0px 20px;
 }
