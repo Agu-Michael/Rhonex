@@ -1,56 +1,66 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import slide_one from '../../../Resources/images/slideOne.jpg';
-import slide_two from '../../../Resources/images/slideTwo.jpg';
-import slide_three from '../../../Resources/images/slideThree.jpg';
-import slide_four from '../../../Resources/images/slideFour.jpg';
-import slide_five from '../../../Resources/images/slideFive.jpg';
-import slide_six from '../../../Resources/images/slideSix.jpg';
+import React, { useState, useEffect, useRef } from 'react';
+import Texts from './texts'; 
+import TextThree from './textThree';
+import TextFour from './textFour';
+
+import slideOne from '../../../Resources/images/slide_one.png';
+import slideTwo from '../../../Resources/images/slide_two.png';
+import slideThree from '../../../Resources/images/slide_three.jpg';
+import slideFour from '../../../Resources/images/slide_four.jpg';
 
 const Carrousel = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { image: slideOne, alt: 'Slide 1', animation: <Texts /> },
+    { image: slideTwo, alt: 'Slide 2', animation: <TextThree /> },
+    { image: slideThree, alt: 'Slide 3', animation: <TextFour/> },
+    { image: slideFour, alt: 'Slide 4', animation: null },
+    // { image: slideFive, alt: 'Slide 5', animation: null },
+    // { image: slideSix, alt: 'Slide 6', animation: null },
+    // { image: slideSeven, alt: 'Slide 7', animation: null },
+    // { image: slideEight, alt: 'Slide 8', animation: null }
+  ];
 
-    const imageStyle = {
-        width: '100%',
-        height: 'auto',
-        maxHeight: '100%',
-        display: 'block',
-        margin: '0 auto',
-    };
+  const slideRef = useRef(null);
 
-    return (
-        <div className='carrousel_wrapper'>
-            <Slider {...settings}>
-                <div>
-                    <img src={slide_one} alt="Slide 1" style={imageStyle} />
-                </div>
-                <div>
-                    <img src={slide_two} alt="Slide 2" style={imageStyle} />
-                </div>
-                <div>
-                    <img src={slide_three} alt="Slide 3" style={imageStyle} />
-                </div>
-                <div>
-                    <img src={slide_four} alt="Slide 4" style={imageStyle} />
-                </div>
-                <div>
-                    <img src={slide_five} alt="Slide 5" style={imageStyle} />
-                </div>
-                <div>
-                    <img src={slide_six} alt="Slide 6" style={imageStyle} />
-                </div>
-            </Slider>
-        </div>
-    );
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(handleNextSlide, 5000); // Autoplay every 5 seconds
+    return () => clearInterval(intervalId); // Clear interval on unmount
+  }, []);
+
+  useEffect(() => {
+    if (slideRef.current) {
+      slideRef.current.style.transform = `translateX(-${currentSlide * 100}%)`; // Adjust width as needed
+    }
+  }, [currentSlide]);
+
+  return (
+    <div className='carrousel_wrapper'>
+      <div className='carousel_container' ref={slideRef}>
+        {slides.map((slide, index) => (
+          <div key={index} className={`slide ${currentSlide === index ? 'active' : ''}`}>
+            <img src={slide.image} alt={slide.alt} />
+            {currentSlide === index && (
+              <div className='animation-container'>
+                {slide.animation}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <button onClick={handlePrevSlide}>Prev</button>
+      <button onClick={handleNextSlide}>Next</button>
+    </div>
+  );
 };
 
 export default Carrousel;
+

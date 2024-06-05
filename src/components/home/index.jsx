@@ -1,11 +1,19 @@
 import React from 'react';
 import Featured from './featured'
-import Texts from './featured/texts'
-const Home = () => {
+import About from './about';
+import PracticesHome from './practices';
+import Sectors from './sectors';
+import Team from './Team'
+
+
+const Home = (props) => {
     return (
         <div>
             <Featured/>
-            <Texts/>
+            <About/>
+            <PracticesHome/>
+            <Sectors/>
+            <Team/>
         </div>
     );
 };

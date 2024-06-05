@@ -202,18 +202,19 @@ footer .footer_discl {
 
 .featured_wrapper {
     margin: 0 auto;
-    width: 1280px;
+    width: 100%;
     margin-top: 90px;
-    height: 800px;
+    height: 100vh;
     overflow: hidden;
     display: flex;
+    position: relative;
 }
 
 .featured_stripes {
     position: relative
 }
 .featured_text {
-    position: relative;
+    position: absolute;
     font-family: 'Righteous', cursive;
 }
 
@@ -276,14 +277,297 @@ footer .footer_discl {
     padding: 21px 70px 0px 70px;
     text-transform: uppercase;
 }
+/* Add these styles to your CSS file */
 
+.carrousel_wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .carousel_container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    opacity: 0.;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+  }
+  
+  .animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction */
+  }
+  
+  .featured_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .featured_wrapper {
+      height: 100vh; /* Maintain full height on smaller screens */
+    }
+  
+    .slide img {
+      object-fit: contain; /* Adjust object-fit for better viewing on small screens */
+    }
+  }
+/*===============================
+|   |   | TEXT ANIMATION
+================================*/
+.text_animation_wrapper {
+    padding: 30px 0px 130px 0px;
+}
+
+.text_animation_wrapper .text_animation {
+    display: flex;
+    padding: 80px 0px 30px 0px;
+}
+
+.text_animation_wrapper .text_animation .left { 
+    text-transform: uppercase;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    flex-grow: 1;
+    color:#ffffff;
+    line-height: 13px;
+}
+.text_animation_wrapper .text_animation .left span {
+    display:block;
+ }
+
+.text_animation_wrapper .text_animation .right {
+    line-height: 135px;
+}
+
+.text_animation_wrapper .text_animation .right div{
+    width: 280px;
+    height: 280px;
+    background-size: contain !important;
+}
+
+.text_animation_three{
+
+justify-content: center;
+display: inline-block;
+position: absolute;
+top: 20%;
+left: 30%;
+z-index: 1;
+}
+.text_header_three{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100px;
+  color: #fb7a1e;
+  padding-bottom: 45px;
+}
+.text_desc_three{
+   
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  max-width: 330px;
+  line-height: 24px;
+  /* color: #fa0c05; */
+  color: #033537;
+
+  
+}
+.text_four_wrapper{
+    display: flex;
+    padding: 70px 0px;
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    z-index: 1;
+}
+.text_four_wrapper .text_four_desc h3{
+    font-size: 34px;
+    font-weight: 100;
+    margin: 0px;
+    color: #ffffff; 
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+}
+.text_four_wrapper .text_four_desc p{
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    font-family:  "Montserrat", sans-serif;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.iconImage {
+    width: 16px; /* Set the exact width */
+    height: 16px; /* Set the exact height */
+    margin-left: 8px; /* Space between the text and the icon */
+    vertical-align: middle; /* Align the icon vertically with the text */
+    display: inline-block; /* Ensure the icon is treated as an inline element */
+  }
+  
+
+  /*===========================
+    |   |  ABOUT SECTION    | |
+  ============================*/
+  .center_wrapper {
+    width: 900px;
+    margin:0 auto;
+}
+
+
+.highlight_wrapper h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color:#2c2c2c;
+    font-size: 54px;
+    margin-top: 60px;
+}
+.highlight_wrapper h3{
+    text-align: center;
+    font-style: italic;
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    margin-top: 3px;
+    margin-left: 210px;
+    justify-content: center;
+}
+
+
+.highlight_wrapper .highlight_description {
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 30px 0px;
+}
+
+.discount_wrapper {
+    display: flex;
+    padding: 70px 0px;
+}
+
+.discount_wrapper .discount_percentage {
+    padding-right: 100px;
+}
+
+.discount_wrapper .discount_percentage span:nth-child(1) {
+    color: #03989e;
+   
+    font-size: 110px;
+    font-weight: 400;
+    display: block;   
+    line-height: 120px;
+}
+
+.discount_wrapper .discount_percentage span:nth-child(2) {
+    color: #2c2c2c;
+    font-size: 43px;
+    font-weight: 400;
+    display: block;
+}
+
+
+.discount_wrapper .discount_description h3 {
+    font-size: 34px;
+    font-weight: 100;
+    margin: 0px;
+    color: #2c2c2c; 
+}
+
+.discount_wrapper .discount_description p { 
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/*===========================
+|   |      MATCHES BLOCK    |
+============================*/
+.practice_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* space between the pairs */
+    padding: 20px;
+  }
+  
+  .service_pair {
+    width: calc(50% - 10px); /* two pairs on each row, with space between them */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between top and bottom boxes */
+  }
+  
+  .service_box {
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+  }
+  
+  .service_name {
+    font-size: 20px;
+    font-family: 'Righteous', cursive;
+  }
+  
+  .iconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .iconButton .iconImage {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+  }
+   
 
 /*=============================
             MATCHES HOME
 ===============================*/
 
 .home_matches_wrapper {
-    background: #98c5e9;
+    background: #333133;
     margin-top:9px;
     padding: 50px 0px;
 }
@@ -307,7 +591,85 @@ footer .footer_discl {
 /*=============================
             MATCHES BLOCK
 ===============================*/
+.match_block .match_date {
+    color: #ffffff;
+    font-size: 18px;
+}
 
+.match_block .match_wrapper .match_top,
+.match_block .match_wrapper .match_bottom {
+    display: flex;
+}
+
+.match_block .match_wrapper .match_bottom {
+    margin-top: 5px;
+}
+
+.match_block .match_wrapper .match_top .left,
+.match_block .match_wrapper .match_bottom .left {
+    background: #ffffff;
+    font-family: 'Righteous', cursive;
+    flex-grow: 1;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+.match_block .match_wrapper .match_top .left div,
+.match_block .match_wrapper .match_bottom .left div {
+    float: left;
+}
+
+.match_block .match_wrapper .match_top .left .icon,
+.match_block .match_wrapper .match_bottom .left .icon {
+    width: 50px;
+    height: 50px;
+    background-size: cover !important;
+}
+
+.match_block .match_wrapper .match_top .left .team_name,
+.match_block .match_wrapper .match_bottom .left .team_name {
+    font-size: 30px;
+    padding: 6px 10px;
+}
+
+.match_block .match_wrapper .match_top .right,
+.match_block .match_wrapper .match_bottom .right {
+    background: #03989e;
+    width: 70px;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+/* Additional styles for overall layout */
+.practice_block {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.match_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.iconButton .iconImage {
+    width: 16px; /* Adjust as needed */
+    height: 16px; /* Adjust as needed */
+    margin-left: 5px; /* Adjust as needed */
+}
+
+/* 
 .match_block .match_date{
     color:#ffffff;
     font-size:18px;
@@ -350,7 +712,7 @@ footer .footer_discl {
 
 .match_block .match_wrapper .match_top .right,
 .match_block .match_wrapper .match_bottom .right { 
-    background: #0e1731;
+    background: #03989e;
     width: 70px;
     color: #ffffff;
     font-size: 50px;
@@ -439,7 +801,7 @@ footer .footer_discl {
 
 .match_filters .cont {
     display: flex;
-}
+} */
 
 
 /*=============================
@@ -514,6 +876,85 @@ footer .footer_discl {
     margin-top: 70px;
 }
 
+/*=============================
+|   |   | Practices     |   |   
+==============================*/
+.practice_header{
+    text-align: center;
+    text-transform: uppercase;
+    font-style: none;
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+/*===============================
+|   |   | Sectors   |   |   |
+===============================*/
+
+.bck_black {
+    background: #3c3c3c;
+}
+
+.pricing_section {
+    padding: 70px 0px;
+}
+
+
+.pricing_section h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.pricing_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pricing_wrapper .pricing_item{
+    flex-grow: 1;
+    width: 33%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pricing_wrapper .pricing_inner_wrapper {
+    border:2px solid #00c2cb;
+    padding: 50px 20px;
+}
+
+.pricing_inner_wrapper .pricing_title {
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #00c2cb;
+    padding-bottom: 20px;
+}
+.pricing_inner_wrapper .pricing_title span:nth-child(1) {
+    font-size: 20px;
+    display: block;
+}
+.pricing_inner_wrapper .pricing_title span:nth-child(2) {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 300;
+}
+.pricing_inner_wrapper .pricing_description {
+    color: #b8b8b8;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0px;
+    min-height: 70px;
+}
+
+.pricing_inner_wrapper .pricing_buttons {
+     text-align: center;
+}
 
 /*=============================
          PROMOTION
@@ -573,6 +1014,76 @@ footer .footer_discl {
     width: 330px;
     margin: 0 auto;
     padding: 10px 0px;
+}
+/*============================
+|   |       TEAM        |   |
+=============================*/
+
+.home_meetplayers { 
+    background: #ffffff;
+}
+
+.home_meetplayers_wrapper {
+    padding-bottom: 100px;
+    min-height: 600px;
+}
+
+.home_meetplayers .home_card_wrapper {
+    position: relative;
+    float: left;
+    width: 630px;
+    min-height: 600px;
+}
+
+.home_meetplayers .home_text_wrapper {
+    float: right;
+    width: 390px;
+    
+}
+.container {
+    width:1024px;
+    margin: 0 auto;
+}
+
+.player_card_wrapper {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    width: 300px;
+    padding: 10px 10px 20px 10px;
+    font-family: 'Righteous';
+}
+.player_card_wrapper .player_card_thmb {
+    border: 1px solid #eeeeee;
+    width:100%;
+    height:250px;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+.player_card_wrapper .player_card_nfo {
+    position: relative;
+}
+.player_card_wrapper .player_card_number {
+    color: #d6ecfe;
+    font-size: 185px;
+    text-align: right;
+    line-height: 160px;
+}
+
+.player_card_wrapper .player_card_name {
+    position: absolute;
+    bottom: 0px;
+}
+
+.player_card_wrapper .player_card_name span { 
+    display: block;
+    font-size: 25px;
+    color: #0d1831;
+}
+
+.home_text_wrapper {
+    margin-top: 70px;
 }
 
 /*=============================

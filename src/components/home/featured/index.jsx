@@ -1,13 +1,15 @@
 import React from 'react';
-import Carrousel from './carousel';
-import Texts from './texts'
+import Carousel from './carousel'
+
+
 
 const Featured = ()=>{
     return(
         <div className='featured_wrapper'>
+            <Carousel/>
+      
+     
             
-            
-            <Texts/>
           
             
         </div>
