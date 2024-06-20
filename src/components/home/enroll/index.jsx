@@ -137,7 +137,7 @@ class Enroll extends Component {
                     paddingTop: "70px",
                   }}
                 >
-                  Subscribe To Our News Letter
+                  Subscribe To News Letters
                 </div>
                 <div className="enroll_input">
                   <FormField
