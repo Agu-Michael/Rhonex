@@ -4,7 +4,7 @@ import PracticeThree from '../../../Resources/images/practice_one.jpg';
 
 import Blocks from './block'
 import Fade from 'react-reveal/Fade'
-import { Height } from '@material-ui/icons';
+
 const PracticesHome =()=>{
     return(
         <div className='home_matches_wrapper' style={{

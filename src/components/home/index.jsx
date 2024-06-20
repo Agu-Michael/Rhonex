@@ -4,7 +4,7 @@ import About from './about';
 import PracticesHome from './practices';
 import Sectors from './sectors';
 import Team from './Team'
-
+import Enroll from './enroll'
 
 const Home = (props) => {
     return (
@@ -14,6 +14,7 @@ const Home = (props) => {
             <PracticesHome/>
             <Sectors/>
             <Team/>
+            <Enroll/>
         </div>
     );
 };
