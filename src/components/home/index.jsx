@@ -5,6 +5,7 @@ import PracticesHome from './practices';
 import Sectors from './sectors';
 import Team from './Team'
 import Enroll from './enroll'
+import Contact from './Contact';
 
 const Home = (props) => {
     return (
@@ -14,7 +15,9 @@ const Home = (props) => {
             <PracticesHome/>
             <Sectors/>
             <Team/>
+         
             <Enroll/>
+            <Contact/>
         </div>
     );
 };
