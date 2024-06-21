@@ -127,9 +127,7 @@ class Contact extends Component {
   render() {
     return (
       <Fade>
-        <div className="enroll_wrapper" style={{
-            background: '#ffffff'
-        }}>
+        <div className="enroll_wrapper">
           <form onSubmit={(e) => this.submitForm(e)}>
             <div className="enroll_title" style={{ paddingTop: "70px" }}>
               Contact Us
@@ -161,7 +159,10 @@ class Contact extends Component {
 
               <button onClick={(e) => this.submitForm(e)}>Send Message</button>
 
-              <div className="enroll_discl">
+              <div className="enroll_discl" style={{
+                fontWeight: '2em',
+                fontSize: '0.9em'
+              }}>
                 Thank you for reaching out! We will get back to you shortly.
               </div>
             </div>

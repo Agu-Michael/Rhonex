@@ -129,7 +129,9 @@ class Enroll extends Component {
   render() {
         return (
           <Fade>
-            <div className="enroll_wrapper">
+            <div className="enroll_wrapper" style={{
+              background: '#03989e'
+            }}>
               <form onSubmit={(e) => this.submitForm(e)}>
                 <div
                   className="enroll_title"
@@ -154,10 +156,10 @@ class Enroll extends Component {
                   <div className="success_label">{this.state.formSuccess}</div>
 
                   <button onClick={(e) => this.submitForm(e)}>Subscribe</button>
-                  <div className="enroll_discl">
-                    Thank you for trusting us! We value your privacy and assure
-                    you that your email will be used solely for the purpose of
-                    communication with our team.
+                  <div className="enroll_discl" style={{
+                    fontSize: '0.95em'
+                  }}>
+                    
                   </div>
                 </div>
               </form>

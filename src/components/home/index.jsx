@@ -16,8 +16,9 @@ const Home = (props) => {
             <Sectors/>
             <Team/>
          
-            <Enroll/>
+           
             <Contact/>
+            <Enroll/>
         </div>
     );
 };
